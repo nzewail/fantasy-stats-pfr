@@ -29,16 +29,16 @@ Output will be in a file `players_{season}.csv` that will look like
 
 ```
 head players_2020.csv 
-player_slug,season
-HenrDe00,2020
-KamaAl00,2020
-CookDa01,2020
-AdamDa01,2020
-KelcTr00,2020
-HillTy00,2020
-AlleJo02,2020
-RodgAa00,2020
-MurrKy00,2020
+player_slug,player_name,position,season
+HenrDe00,Derrick Henry,RB,2020
+KamaAl00,Alvin Kamara,RB,2020
+CookDa01,Dalvin Cook,RB,2020
+AdamDa01,Davante Adams,WR,2020
+KelcTr00,Travis Kelce,TE,2020
+HillTy00,Tyreek Hill,WR,2020
+AlleJo02,Josh Allen,QB,2020
+RodgAa00,Aaron Rodgers,QB,2020
+MurrKy00,Kyler Murray,QB,2020
 
 ```
 
