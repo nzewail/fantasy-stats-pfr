@@ -8,7 +8,7 @@ import re
 
 PATH = 'players'
 REGEX = r'(\d+)\-(\d+)'
-COLS = {'unnamed: 4_level_2': 'is_home', 'g#': 'game_num', 'FantPt': 'fantasy_pts'}
+COLS = {'unnamed: 4_level_2': 'is_home', 'g#': 'game_num'}
 
 
 def parse_args():
