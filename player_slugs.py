@@ -5,9 +5,9 @@ from bs4 import BeautifulSoup
 import argparse
 import re
 from constants import BASE_URL
+from player import Player
 
 PATH = 'years'
-REGEX = r'\/[A-Z]\/(.*)\.htm'
 
 
 def parse_args():
@@ -37,15 +37,11 @@ def parse_response(response):
         data_row = row.find('td', attrs={'data-stat': 'player'})
         try:
             player_path = data_row.a.get('href')
-            yield parse_slugs_from_player_path(player_path)
+            name = data_row.a.get_text().strip()
+            position = row.find('td', attrs={'data-stat': 'fantasy_pos'}).get_text()
+            yield Player(player_path, name, position)
         except AttributeError:
             yield None
-
-
-def parse_slugs_from_player_path(path: str) -> str:
-    match = re.search(REGEX, path)
-    if match:
-        return match.group(1)
 
 
 def main():
@@ -56,10 +52,10 @@ def main():
         response = get_fantasy_leaders_page(url)
         if response:
             with open(f'players_{season}.csv', 'w') as f:
-                f.write('player_slug,season\n')
+                f.write('player_slug,player_name,position,season\n')
                 for row in parse_response(response):
                     if row:
-                        f.write(f'{row},{season}\n')
+                        f.write(f'{row.to_string()},{season}\n')
                 f.close()
 
 

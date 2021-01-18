@@ -12,7 +12,7 @@ pip3 install -r requirements.txt
 
 ### `player_slugs.py`
 
-This script returns all the player slugs from PFR for a given season. Script takes in multiple season arguments to pull slugs from different seasons. PFR uses a weird slug for their player pages. This script takes the fantasy leaderboard [page](https://www.pro-football-reference.com/years/2020/fantasy.htm) and parses the href in each row to get the slug for a given player and outputs to a csv. The methodology uses code from [here](https://stmorse.github.io/journal/pfr-scrape-python.html)
+This script returns all the player slugs from PFR for a given season. Script takes in multiple season arguments to pull slugs from different seasons. PFR uses a weird slug for their player pages. This script takes the fantasy leaderboard [page](https://www.pro-football-reference.com/years/2020/fantasy.htm) and parses the href in each row to get the slug for a given player and outputs to a csv. The methodology uses code from [here](https://stmorse.github.io/journal/pfr-scrape-python.html).
 
 ```
 python3 player_slugs.py --help
