@@ -1,9 +1,12 @@
+#!/usr/bin/python3
+
 import requests
 from bs4 import BeautifulSoup
 import argparse
 import re
+from constants import BASE_URL
 
-BASE_URL = 'https://www.pro-football-reference.com/years'
+PATH = 'years'
 REGEX = r'\/[A-Z]\/(.*)\.htm'
 
 
@@ -14,7 +17,7 @@ def parse_args():
 
 
 def build_url(season: int) -> str:
-    return f'{BASE_URL}/{str(season)}/fantasy.htm'
+    return f'{BASE_URL}/{PATH}/{str(season)}/fantasy.htm'
 
 
 def get_fantasy_leaders_page(url: str):

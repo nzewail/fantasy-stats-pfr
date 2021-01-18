@@ -42,3 +42,34 @@ MurrKy00,2020
 
 ```
 
+### `fantasy_stats.py`
+
+```
+python3 fantasy_stats.py  --help
+usage: fantasy_stats.py [-h] [-f FILE] [-o OUTPUT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FILE, --file FILE  csv file of player_slug, season
+  -o OUTPUT, --output OUTPUT
+```
+
+Input file expected for `fantasy_stats.py` is equivalent to the output file from above. Running for an input file that covers all the players in a given season will take some time. 
+
+Output will default to `stats.json` with the following sample row:
+```json
+{
+  "game_num": 1,
+  "date": "2020-09-14",
+  "tm": "TEN",
+  "is_home": false,
+  "opp": "DEN",
+  "result": "W 16-14",
+  "pos": "RB",
+  "fdpt": 14.6,
+  "is_win": true,
+  "margin": 2,
+  "player_slug": "HenrDe00",
+  "season": "2020"
+}
+```
